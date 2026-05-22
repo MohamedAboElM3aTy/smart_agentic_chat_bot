@@ -1,0 +1,34 @@
+{
+    "firestore": {
+        "rules": "firestore.rules",
+        "indexes": "firestore.indexes.json"
+    },
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "smart-agentic-chat-bot",
+                    "appId": "1:332958935411:android:445d8bd0fec22c84c7bd06",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "ios": {
+                "default": {
+                    "projectId": "smart-agentic-chat-bot",
+                    "appId": "1:332958935411:ios:3bbc526e57fb6c7dc7bd06",
+                    "uploadDebugSymbols": false,
+                    "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "smart-agentic-chat-bot",
+                    "configurations": {
+                        "android": "1:332958935411:android:445d8bd0fec22c84c7bd06",
+                        "ios": "1:332958935411:ios:3bbc526e57fb6c7dc7bd06"
+                    }
+                }
+            }
+        }
+    }
+}

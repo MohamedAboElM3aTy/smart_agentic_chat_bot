@@ -1,0 +1,44 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Helpers ───────────────────────────────────────────────────────────────
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return request.auth.uid == uid;
+    }
+
+    // ── Users ─────────────────────────────────────────────────────────────────
+    // Each user can only read/write their own profile document.
+
+    match /users/{uid} {
+      allow read, write: if isSignedIn() && isOwner(uid);
+    }
+
+    // ── Products ──────────────────────────────────────────────────────────────
+    // Any authenticated user can read products.
+    // Only authenticated users can write (for the demo seed button).
+    // In production, restrict writes to admin users or Cloud Functions.
+
+    match /products/{productId} {
+      allow read: if isSignedIn();
+      allow create, update, delete: if isSignedIn();
+    }
+
+    // ── Cart ──────────────────────────────────────────────────────────────────
+    // Each user can only access their own cart.
+
+    match /cart/{uid} {
+      allow read, write: if isSignedIn() && isOwner(uid);
+
+      match /items/{itemId} {
+        allow read, write: if isSignedIn() && isOwner(uid);
+      }
+    }
+  }
+}

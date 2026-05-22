@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dart analyze:*)",
+      "Bash(flutter pub:*)",
+      "Bash(dart run:*)",
+      "mcp__claude_ai_Context7__query-docs"
+    ]
+  }
+}

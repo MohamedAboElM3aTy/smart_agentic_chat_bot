@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "332958935411",
+    "project_id": "smart-agentic-chat-bot",
+    "storage_bucket": "smart-agentic-chat-bot.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332958935411:android:445d8bd0fec22c84c7bd06",
+        "android_client_info": {
+          "package_name": "com.example.smart_agentic_chat_bot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8BoPpPzDGvA-45srqcsh5iEejxdCumWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
